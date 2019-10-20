@@ -1,0 +1,10 @@
+G:\Мои документы\ready lab\CNN\v2.0\nnv2\bin\Debug\nnv2.exe.config
+G:\Мои документы\ready lab\CNN\v2.0\nnv2\bin\Debug\nnv2.exe
+G:\Мои документы\ready lab\CNN\v2.0\nnv2\bin\Debug\nnv2.pdb
+G:\Мои документы\ready lab\CNN\v2.0\nnv2\obj\Debug\nnv2.csprojAssemblyReference.cache
+G:\Мои документы\ready lab\CNN\v2.0\nnv2\obj\Debug\nnv2.csproj.CoreCompileInputs.cache
+G:\Мои документы\ready lab\CNN\v2.0\nnv2\obj\Debug\nnv2.exe
+G:\Мои документы\ready lab\CNN\v2.0\nnv2\obj\Debug\nnv2.pdb
+g:\Мои документы\ready lab\CNN\v2.0\nnv2\bin\Debug\Newtonsoft.Json.dll
+g:\Мои документы\ready lab\CNN\v2.0\nnv2\bin\Debug\Newtonsoft.Json.xml
+g:\Мои документы\ready lab\CNN\v2.0\nnv2\obj\Debug\nnv2.csproj.CopyComplete
