@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestNN.Models
 {
@@ -20,7 +17,7 @@ namespace TestNN.Models
         }
         private double FActivation(double x)
         {
-            return 1 / (1+Math.Pow( Math.E,-x));
+            return 1 / (1 + Math.Pow(Math.E, -x));
         }
 
         public double SetValue

@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestNN.Models
 {
     [Serializable]
     class NNModel
     {
-        public List<Layer> Layers { get; set; }
+
+        public List<Layer> Layers;
         public NNModel(int[] countLayers)
         {
             //инициализация всех слоев
@@ -44,14 +43,12 @@ namespace TestNN.Models
             {
                 Layers[0].Neurons[i].Value = input[i];
             }
-            //foreach (var layer in Layers)//взять слой
-            //{
+
             for (int i = 1; i < Layers.Count; i++)
             {
                 Layer layer = Layers[i];
                 foreach (Neuron neuron in layer.Neurons)//беру нейрон
                 {
-                    //if (neuron.InputSynapses.Count == 0) { break; }
                     neuron.SetValue = neuron.InputSynapses.Sum(x => { return x.InputNeuron.Value * x.Value; }) + 1;//плюс нейрон смещения
                 }
             }
@@ -77,7 +74,7 @@ namespace TestNN.Models
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream(name, FileMode.OpenOrCreate))
             {
-                 model = (NNModel)formatter.Deserialize(fs);
+                model = (NNModel)formatter.Deserialize(fs);
             }
             return model;
         }

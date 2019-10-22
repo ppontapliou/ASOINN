@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace TestNN.Models
 {
@@ -13,6 +9,7 @@ namespace TestNN.Models
 
         public void Learn(NNModel network, double[][] inLayer)
         {
+
             for (int k = 0; k < 100000; k++)
                 for (int i = 0; i < inLayer.Length; i += 2)
                 {
@@ -21,7 +18,11 @@ namespace TestNN.Models
 
                     var outLayer = inLayer[i + 1];
                     Layer lastLayer = network.Layers.Last();
-
+                    //gpu.For(0, len, j=> {
+                    //    double output = lastLayer.Neurons[j].Value;
+                    //    double param = outLayer[j];
+                    //    lastLayer.Neurons[j].Value = (param - output) * ((1 - output) * output);
+                    //});
                     //reculc error on last layer
                     for (int j = 0; j < lastLayer.Neurons.Count; j++)
                     {
@@ -37,6 +38,7 @@ namespace TestNN.Models
                     }
                 }
         }
+
         private void RecalcLayer(Layer layer)
         {
             for (int i = 0; i < layer.Neurons.Count; i++)
