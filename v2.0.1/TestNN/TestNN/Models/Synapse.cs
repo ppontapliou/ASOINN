@@ -6,7 +6,7 @@ namespace TestNN.Models
     class Synapse
     {
         public double Value { get; set; }
-        public double DeltaValue { get; set; } = 0;
+        public double DeltaValue { get; set; } 
         public Neuron InputNeuron { get; set; }
         public Neuron OutputNeuron { get; set; }
         public Synapse()

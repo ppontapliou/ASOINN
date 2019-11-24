@@ -57,11 +57,20 @@ namespace TestNN.Models
             //});
             return Layers.Last();
         }
+        public static double[] ReculcArray(params double[] input)
+        {
+            double[] result = new double[input.Length];
+            for(int i = 0; i< input.Length; i++)
+            {
+                result[i] = (input[i] - input.Min()) / (input.Max() - input.Min());
+            }
+            return result;
+        }
         public void Save()
         {
             BinaryFormatter formatter = new BinaryFormatter();
             // получаем поток, куда будем записывать сериализованный объект
-            using (FileStream fs = new FileStream("nnmodel.dat", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream($"nnmodel.dat", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, this);
 
